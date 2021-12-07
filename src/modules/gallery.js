@@ -7,6 +7,9 @@ const gallerySchema = new mongoose.Schema({
        ref: "user",
        required: true ,
    }
+},{
+    versionKey:false,
+    timestamps: true 
 })
 
 

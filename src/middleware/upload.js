@@ -3,7 +3,9 @@ const path = require("path")
 const multer = require("multer")
 
 const storage = multer.diskStorage({
-    distination : function (req, file , callback ){
+   
+    destination : function (req, file , callback ){
+       
         callback(null, path.join(__dirname,"../uploads"))
     },
     filename : function(req,file, callback){
@@ -14,7 +16,8 @@ const storage = multer.diskStorage({
 })
 
 const fileFilter = (req, file, callback)=>{
-   if(file.mimetype === "image/jpeg" || file.minetype === "image/png" ){
+   
+   if(file.mimetype === "image/jpeg" || file.mimetype === "image/png" ){
        callback(null , true )
    }else{
        callback(null, false)
